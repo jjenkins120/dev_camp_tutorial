@@ -10,7 +10,8 @@ Rails.application.routes.draw do
       get :toggle_status
     end
   end
-
+  
+  get 'angular-items', to: 'portfolios#angular'
   get 'about-me', to: 'pages#about'
   get 'contact', to: 'pages#contact'
   
