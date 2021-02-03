@@ -1,8 +1,19 @@
 Rails.application.routes.draw do
+  #IF YOU WANTED TO MAKE A CUSTOM ROUTE WITH RESOURCES:
+  # resources :portfolios, except: [:show]
+  # get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
+  
   resources :portfolios
-  get 'pages/home'
-  get 'pages/about'
-  get 'pages/contact'
-  resources :blogs
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :blogs do 
+    member do
+      get :toggle_status
+    end
+  end
+
+  get 'about-me', to: 'pages#about'
+  get 'contact', to: 'pages#contact'
+  
+  root to: 'pages#home'
+
 end
