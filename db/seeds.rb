@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts 'Destroying seeds'
+Technology.destroy_all
 Blog.destroy_all
 Topic.destroy_all
 Skill.destroy_all
@@ -63,5 +64,13 @@ end
         body: 'Sample body',
         main_image: 'https://via.placeholder.com/150', 
         thumb_image: 'https://via.placeholder.com/150'
+    )
+end
+
+puts 'Creating Technologies'
+
+3.times do |technology|
+    Portfolio.last.technologies.create!(
+        name: "Technology #{technology}",
     )
 end
