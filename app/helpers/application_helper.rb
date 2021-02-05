@@ -16,5 +16,9 @@ module ApplicationHelper
             content_tag(:h4, greeting, class: 'source-greeting')
         end 
     end
+    
+    def copyright_generator
+        @copyright = JJViewTool::Renderer.copyright 'Jeff Jenkins', 'All rights reserved'
+    end
 
 end
