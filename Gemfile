@@ -54,3 +54,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'JJ_view_tool', git: 'https://github.com/jjenkins120/JJ_View_Tool'
+
+gem 'petergate', '~> 2.0', '>= 2.0.1'
